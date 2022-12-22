@@ -1,0 +1,55 @@
+python-traceback2 (1.4.0-6) unstable; urgency=medium
+
+  * d/control: Use team+openstack@tracker.debian.org as maintainer
+  * Use debhelper-compat instead of debian/compat.
+  * Removed Python 2 support (Closes: #952130, #938222).
+  * Switch to debhelper compat level 11.
+  * Fixed debian/copyright ordering and years.
+
+ -- Ondřej Nový <onovy@debian.org>  Fri, 03 Aug 2018 06:05:45 +0200
+
+python-traceback2 (1.4.0-5) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/control: Set Vcs-* to salsa.debian.org
+  * d/rules: Changed UPSTREAM_GIT protocol to https
+
+  [ Daniel Baumann ]
+  * Updating copyright format url.
+  * Updating maintainer field.
+  * Running wrap-and-sort -bast.
+  * Removing gbp.conf, not used anymore or should be specified in the
+    developers dotfiles.
+
+  [ Thomas Goirand ]
+  * Add six as runtime depends.
+
+ -- Thomas Goirand <zigo@debian.org>  Sat, 21 Apr 2018 14:45:12 +0000
+
+python-traceback2 (1.4.0-4) unstable; urgency=medium
+
+  * Fixed VCS URLs (https).
+  * d/rules: Changed UPSTREAM_GIT protocol to https
+  * d/s/options: extend-diff-ignore of .gitreview
+  * d/control: Using OpenStack's Gerrit as VCS URLs.
+
+ -- Ondřej Nový <novy@ondrej.org>  Sun, 28 Feb 2016 15:52:22 +0100
+
+python-traceback2 (1.4.0-3) unstable; urgency=medium
+
+  * Fixed FTBFS by not running unit tests: there's no way to do it the way
+    upstream organized sources and dependencies (Closes: #799163).
+
+ -- Thomas Goirand <zigo@debian.org>  Mon, 21 Sep 2015 08:48:26 +0000
+
+python-traceback2 (1.4.0-2) unstable; urgency=medium
+
+  * Applied Ubuntu patch to run unit tests at build time (Closes: #795891).
+
+ -- Thomas Goirand <zigo@debian.org>  Mon, 14 Sep 2015 11:14:16 +0000
+
+python-traceback2 (1.4.0-1) unstable; urgency=medium
+
+  * Initial release. (Closes: #791791)
+
+ -- Thomas Goirand <zigo@debian.org>  Tue, 21 Apr 2015 09:25:58 +0200

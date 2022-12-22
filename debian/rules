@@ -1,0 +1,31 @@
+#!/usr/bin/make -f
+
+UPSTREAM_GIT := https://github.com/testing-cabal/traceback2.git
+include /usr/share/openstack-pkg-tools/pkgos.make
+
+export http_proxy=http://127.0.0.1:9
+export https_proxy=http://127.0.0.1:9
+
+
+%:
+	dh $@ --buildsystem=python_distutils --with python3
+
+override_dh_auto_install:
+	pkgos-dh_auto_install --no-py2
+
+override_dh_auto_clean:
+	rm -rf build .testrepository
+
+override_dh_auto_build:
+	echo "Do nothing..."
+
+# Disable unit tests until there's a way to do it properly.
+override_dh_auto_test:
+ifeq (,$(findstring nocheck, $(DEB_BUILD_OPTIONS)))
+#	@echo "===> Running tests"
+#	set -ex && for i in $(PYTHON3S) ; do \
+#		PYMAJOR=`echo $$i | cut -d'.' -f1` ; \
+#		echo "===> Testing with python$$i (python$$PYMAJOR)" ; \
+#		PYTHONPATH=. PYTHON=python$$i python$$PYMAJOR-unit2; \
+#	done
+endif
